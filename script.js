@@ -12,10 +12,21 @@ function getComputerChoice() {
 
   //variable that randomly generates a number between 0 and 2
   const randomIndex = Math.floor(Math.random() * 3);
-  
+
   //returns either rock, paper, or scissors randomly by using the randomly generated index number.
   return options[randomIndex]
 }
 
-console.log(getComputerChoice());
+
+//create variable to store play selection
+const playerSelection = "rock";
+//create variable to store computer selection 
+const computerSelection = getComputerChoice();
+
+
+function playRound(computerSelection, playerSelection) {
+//
+}
+
+//console.log(getComputerChoice());
 
