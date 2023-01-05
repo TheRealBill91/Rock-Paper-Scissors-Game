@@ -1,11 +1,9 @@
 
-
-
 function game() {
 
 
 
-    let rounds = 0;
+    
     for (i = 0; i < 5; i++) {
         //create variable to store play selection
         let playerSelection = caseSensitiveInput();
@@ -13,8 +11,8 @@ function game() {
         let computerSelection = getComputerChoice();
         //create variable that takes user input for rock, paper, or scissors. Needs to be case sensitive
         playRound(playerSelection, computerSelection);
-        rounds++;
-        console.log(rounds);
+        //rounds++;
+        console.log(`rounds: ${(i + 1)}`);
         console.log(`Player score: ${playerScore}, Computer score: ${computerScore}`);
     }
 
@@ -30,6 +28,7 @@ function game() {
 
     playerScore = 0;
     computerScore = 0;
+    //rounds = 1;
 
     console.log(`Player score (end game): ${playerScore}, Computer score (end game): ${computerScore}`);
 
@@ -51,13 +50,14 @@ function getComputerChoice() {
 }
 
 
+//let rounds = 1;
 
 
 
 //Create function to convert input of any case type to first letter uppercase and the rest lowercase:
 function caseSensitiveInput() {
     //Create variable that takes user input
-    let userInput = prompt("Enter rock, paper, or scissors: ");
+    let userInput = prompt(`Round ${(i + 1)}: Enter rock, paper, or scissors: `);
     let finalResult = userInput.charAt(0).toUpperCase() + userInput.slice(1).toLowerCase();
     //console.log(finalResult);
     return finalResult;
@@ -88,7 +88,7 @@ function playRound(playerSelection, computerSelection) {
 
     //checks to see if playerSelection (variable that stores user input) is one of "Rock", "Paper", or "Scissors"
     if (playerSelection != "Rock" && playerSelection != "Paper" && playerSelection != "Scissors") {
-        alert("Please enter rock, paper, or scissors ")
+        alert("Oops, please enter rock, paper, or scissors ")
         playerSelection = caseSensitiveInput();
         computerSelection = getComputerChoice();
         return playRound(playerSelection, computerSelection);
@@ -99,21 +99,27 @@ function playRound(playerSelection, computerSelection) {
 
     if (playerSelection == "Scissors" && computerSelection == "Rock") {
         computerScore++,
+            //rounds++,
             console.log("You lose! Rock beats scissors");
     } else if (playerSelection == "Scissors" && computerSelection == "Paper") {
         playerScore++,
+            //rounds++,
             console.log("You win! Scissors beats paper");
     } else if (playerSelection == "Paper" && computerSelection == "Scissors") {
         computerScore++,
+            //rounds++,
             console.log("You lose! Scissors beats paper");
     } else if (playerSelection == "Paper" && computerSelection == "Rock") {
         playerScore++,
+            //rounds++,
             console.log("You win! Paper beats rock");
     } else if (playerSelection == "Rock" && computerSelection == "Scissors") {
         playerScore++,
+            //rounds++,
             console.log("You win! Rock beats scissors");
     } else if (playerSelection == "Rock" && computerSelection == "Paper") {
         computerScore++,
+            //rounds++,
             console.log("You lose! Paper beats rock");
 
     } else
