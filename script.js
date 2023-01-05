@@ -1,40 +1,4 @@
 
-function game() {
-
-
-
-    
-    for (i = 0; i < 5; i++) {
-        //create variable to store play selection
-        let playerSelection = caseSensitiveInput();
-        //create variable to store computer selection 
-        let computerSelection = getComputerChoice();
-        //create variable that takes user input for rock, paper, or scissors. Needs to be case sensitive
-        playRound(playerSelection, computerSelection);
-        //rounds++;
-        console.log(`rounds: ${(i + 1)}`);
-        console.log(`Player score: ${playerScore}, Computer score: ${computerScore}`);
-    }
-
-    let winner = () => {
-        if (playerScore > computerScore) {
-            return "Congrats, you win!"
-        } else {
-            return "You lose, try again!"
-        }
-    }
-
-    console.log(winner());
-
-    playerScore = 0;
-    computerScore = 0;
-    //rounds = 1;
-
-    console.log(`Player score (end game): ${playerScore}, Computer score (end game): ${computerScore}`);
-
-}
-
-
 
 
 //function that returns either rock, paper, or scissors, with a random chance for each option.
@@ -81,6 +45,39 @@ let playerScore = 0;
 
 //computer score variable
 let computerScore = 0;
+
+
+function game() {
+
+    for (i = 0; i < 5; i++) {
+        //create variable to store play selection
+        let playerSelection = caseSensitiveInput();
+        //create variable to store computer selection 
+        let computerSelection = getComputerChoice();
+        //create variable that takes user input for rock, paper, or scissors. Needs to be case sensitive
+        playRound(playerSelection, computerSelection);
+        //rounds++;
+        console.log(`rounds: ${(i + 1)}`);
+        console.log(`Player score: ${playerScore}, Computer score: ${computerScore}`);
+    }
+
+    let winner = () => {
+        if (playerScore > computerScore) {
+            return "Congrats, you win!"
+        } else {
+            return "You lose, try again!"
+        }
+    }
+
+    console.log(winner());
+
+    playerScore = 0;
+    computerScore = 0;
+    //rounds = 1;
+
+    console.log(`Player score (end game): ${playerScore}, Computer score (end game): ${computerScore}`);
+
+}
 
 
 //Create function that plays one round of rock paper scissors:
