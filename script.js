@@ -47,6 +47,16 @@ let playerScore = 0;
 //computer score variable
 let computerScore = 0;
 
+function validateInput(playerSelection, computerSelection) {
+    //checks to see if playerSelection (variable that stores user input) is one of "Rock", "Paper", or "Scissors"
+    if (playerSelection != "Rock" && playerSelection != "Paper" && playerSelection != "Scissors") {
+        alert("Oops, please enter rock, paper, or scissors ");
+        playerSelection = caseSensitiveInput();
+        computerSelection = getComputerChoice();
+        return playRound(playerSelection, computerSelection);
+    }
+}
+
 
 function game() {
 
@@ -84,13 +94,7 @@ function game() {
 //Create function that plays one round of rock paper scissors:
 function playRound(playerSelection, computerSelection) {
 
-    //checks to see if playerSelection (variable that stores user input) is one of "Rock", "Paper", or "Scissors"
-    if (playerSelection != "Rock" && playerSelection != "Paper" && playerSelection != "Scissors") {
-        alert("Oops, please enter rock, paper, or scissors ")
-        playerSelection = caseSensitiveInput();
-        computerSelection = getComputerChoice();
-        return playRound(playerSelection, computerSelection);
-    }
+    validateInput(playerSelection, computerSelection);
 
     //compare the results of computer selection and player selection using an if else statement
     //make sure to compare all possible outcomes of rock, paper, or scissors including things like ties
