@@ -22,7 +22,8 @@ function getComputerChoice() {
 function caseSensitiveInput() {
     //Create variable that takes user input
     let userInput = prompt(`Round ${(i + 1)}: Enter rock, paper, or scissors: `);
-    let finalResult = userInput.charAt(0).toUpperCase() + userInput.slice(1).toLowerCase();
+    let finalResult = userInput.charAt(0).toUpperCase() +
+        userInput.slice(1).toLowerCase();
     //console.log(finalResult);
     return finalResult;
 }
