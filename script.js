@@ -47,15 +47,7 @@ let playerScore = 0;
 //computer score variable
 let computerScore = 0;
 
-function validateInput(playerSelection, computerSelection) {
-    //checks to see if playerSelection (variable that stores user input) is one of "Rock", "Paper", or "Scissors"
-    if (playerSelection != "Rock" && playerSelection != "Paper" && playerSelection != "Scissors") {
-        alert("Oops, please enter rock, paper, or scissors ");
-        playerSelection = caseSensitiveInput();
-        computerSelection = getComputerChoice();
-        return playRound(playerSelection, computerSelection);
-    }
-}
+
 
 
 function game() {
@@ -65,11 +57,19 @@ function game() {
         let playerSelection = caseSensitiveInput();
         //create variable to store computer selection 
         let computerSelection = getComputerChoice();
+
+        //validateInput(playerSelection, computerSelection);
+
+        let newSelections = validateInput(playerSelection, computerSelection);
+        playerSelection = newSelections[0];
+        computerSelection = newSelections[1];
+
+
         //create variable that takes user input for rock, paper, or scissors. Needs to be case sensitive
         let roundResult = playRound(playerSelection, computerSelection);
         console.log(roundResult);
         //console.log(`rounds: ${(i + 1)}`);
-        //console.log(`Player score: ${playerScore}, Computer score: ${computerScore}`);
+        console.log(`Player score: ${playerScore}, Computer score: ${computerScore}`);
     }
 
     let winner = () => {
@@ -79,6 +79,8 @@ function game() {
             return "You lose, try again!"
         }
     }
+
+
 
     console.log(winner());
 
@@ -90,11 +92,23 @@ function game() {
 
 }
 
+function validateInput(playerSelection, computerSelection) {
+    //checks to see if playerSelection (variable that stores user input) is one of "Rock", "Paper", or "Scissors"
+    if (playerSelection != "Rock" && playerSelection != "Paper" && playerSelection != "Scissors") {
+        alert("Oops, please enter rock, paper, or scissors ");
+        playerSelection = caseSensitiveInput();
+        computerSelection = getComputerChoice();
+
+    }
+    return [playerSelection, computerSelection];
+
+}
+
 
 //Create function that plays one round of rock paper scissors:
 function playRound(playerSelection, computerSelection) {
 
-    validateInput(playerSelection, computerSelection);
+    
 
     //compare the results of computer selection and player selection using an if else statement
     //make sure to compare all possible outcomes of rock, paper, or scissors including things like ties
