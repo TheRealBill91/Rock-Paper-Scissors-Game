@@ -53,19 +53,16 @@ let computerScore = 0;
 function game() {
 
     for (i = 0; i < 5; i++) {
-        //create variable to store play selection
         let playerSelection = caseSensitiveInput();
-        //create variable to store computer selection 
         let computerSelection = getComputerChoice();
 
-        //validateInput(playerSelection, computerSelection);
 
-        let newSelections = validateInput(playerSelection, computerSelection);
-        playerSelection = newSelections[0];
-        computerSelection = newSelections[1];
+        //Used for new corrected playerSelection
+        // let newSelections = validateInput(playerSelection, computerSelection);
+        // playerSelection = newSelections[0];
+        // computerSelection = newSelections[1];
 
 
-        //create variable that takes user input for rock, paper, or scissors. Needs to be case sensitive
         let roundResult = playRound(playerSelection, computerSelection);
         console.log(roundResult);
         //console.log(`rounds: ${(i + 1)}`);
@@ -92,45 +89,44 @@ function game() {
 
 }
 
-function validateInput(playerSelection, computerSelection) {
-    //checks to see if playerSelection (variable that stores user input) is one of "Rock", "Paper", or "Scissors"
-    if (playerSelection != "Rock" && playerSelection != "Paper" && playerSelection != "Scissors") {
-        alert("Oops, please enter rock, paper, or scissors ");
-        playerSelection = caseSensitiveInput();
-        computerSelection = getComputerChoice();
-
-    }
-    return [playerSelection, computerSelection];
-
-}
+// function validateInput(playerSelection, computerSelection) {
+//     //checks to see if playerSelection (variable that stores user input) is one of "Rock", "Paper", or "Scissors"
+//     if (playerSelection != "Rock" && playerSelection != "Paper" && playerSelection != "Scissors") {
+//         alert("Oops, please enter rock, paper, or scissors ");
+//         playerSelection = caseSensitiveInput();
+//         computerSelection = getComputerChoice();
+//         return [playerSelection, computerSelection];
+//     }
 
 
-//Create function that plays one round of rock paper scissors:
+// }
+
+
+//Function that plays one round of rock paper scissors:
 function playRound(playerSelection, computerSelection) {
 
-    
+
 
     //compare the results of computer selection and player selection using an if else statement
-    //make sure to compare all possible outcomes of rock, paper, or scissors including things like ties
 
     if (playerSelection == "Scissors" && computerSelection == "Rock") {
         computerScore++;
-        return "You lose! Rock beats scissors";
+        return "You lose! Rock beats Scissors";
     } else if (playerSelection == "Scissors" && computerSelection == "Paper") {
         playerScore++;
-        return "You win! Scissors beats paper";
+        return "You win! Scissors beats Paper";
     } else if (playerSelection == "Paper" && computerSelection == "Scissors") {
         computerScore++;
-        return "You lose! Scissors beats paper";
+        return "You lose! Scissors beats Paper";
     } else if (playerSelection == "Paper" && computerSelection == "Rock") {
         playerScore++;
-        return "You win! Paper beats rock";
+        return "You win! Paper beats Rock";
     } else if (playerSelection == "Rock" && computerSelection == "Scissors") {
         playerScore++;
-        return "You win! Rock beats scissors";
+        return "You win! Rock beats Scissors";
     } else if (playerSelection == "Rock" && computerSelection == "Paper") {
         computerScore++;
-        return "You lose! Paper beats rock";
+        return "You lose! Paper beats Rock";
 
     } else
         if (playerSelection == computerSelection) {
@@ -139,7 +135,6 @@ function playRound(playerSelection, computerSelection) {
             playRound(playerSelection, computerSelection);  //This causes the user input to be assigned to the computerSelection
 
         }
-    //return playerScore, computerScore;
 }
 
 
