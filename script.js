@@ -21,7 +21,7 @@ function getComputerChoice() {
 //Create function to convert input of any case type to first letter uppercase and the rest lowercase:
 function caseSensitiveInput() {
     //Create variable that takes user input
-    let userInput = prompt(`Round ${(i + 1)}: Enter rock, paper, or scissors: `);
+    let userInput = prompt(`Enter rock, paper, or scissors: `);
     let finalResult = userInput.charAt(0).toUpperCase() +
         userInput.slice(1).toLowerCase();
     //console.log(finalResult);
@@ -52,9 +52,10 @@ let computerScore = 0;
 
 function game() {
 
-    for (i = 0; i < 5; i++) {
+    while (playerScore < 5 && computerScore < 5) {
         let playerSelection = caseSensitiveInput();
-        let computerSelection = getComputerChoice();
+        //let computerSelection = getComputerChoice();
+        let computerSelection = "Rock";
 
 
         //Used for new corrected playerSelection
@@ -130,9 +131,10 @@ function playRound(playerSelection, computerSelection) {
 
     } else
         if (playerSelection == computerSelection) {
+            alert("It's a tie!")
             computerSelection = getComputerChoice();
-            //playerSelection = caseSensitiveInput();      
-            playRound(playerSelection, computerSelection);  //This causes the user input to be assigned to the computerSelection
+            playerSelection = caseSensitiveInput();      
+            return playRound(playerSelection, computerSelection);  //This causes the user input to be assigned to the computerSelection
 
         }
 }
