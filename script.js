@@ -54,14 +54,10 @@ function game() {
 
     while (playerScore < 5 && computerScore < 5) {
         let playerSelection = caseSensitiveInput();
-        //let computerSelection = getComputerChoice();
-        let computerSelection = "Rock";
-
-
-        //Used for new corrected playerSelection
-        // let newSelections = validateInput(playerSelection, computerSelection);
-        // playerSelection = newSelections[0];
-        // computerSelection = newSelections[1];
+        let computerSelection = getComputerChoice();
+        
+        //for testing
+        //let computerSelection = "Rock";
 
 
         let roundResult = playRound(playerSelection, computerSelection);
@@ -82,25 +78,14 @@ function game() {
 
     console.log(winner());
 
+    //used to reset player and computer scores after each game
     playerScore = 0;
     computerScore = 0;
-    //rounds = 1;
-
-    console.log(`Player score (end game): ${playerScore}, Computer score (end game): ${computerScore}`);
+    
+    //Used to test if player and computer scores are resetting after each game
+    //console.log(`Player score (end game): ${playerScore}, Computer score (end game): ${computerScore}`);
 
 }
-
-// function validateInput(playerSelection, computerSelection) {
-//     //checks to see if playerSelection (variable that stores user input) is one of "Rock", "Paper", or "Scissors"
-//     if (playerSelection != "Rock" && playerSelection != "Paper" && playerSelection != "Scissors") {
-//         alert("Oops, please enter rock, paper, or scissors ");
-//         playerSelection = caseSensitiveInput();
-//         computerSelection = getComputerChoice();
-//         return [playerSelection, computerSelection];
-//     }
-
-
-// }
 
 
 //Function that plays one round of rock paper scissors:
