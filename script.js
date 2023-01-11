@@ -47,45 +47,66 @@ let playerScore = 0;
 //computer score variable
 let computerScore = 0;
 
+let computerSelection = getComputerChoice();
+//let playerSelection = caseSensitiveInput()
+//let playerSelection = 'Rock';
+let result;
 
 
+const buttons = document.querySelectorAll('button');
 
-function game() {
-
-    while (playerScore < 5 && computerScore < 5) {
-        let playerSelection = caseSensitiveInput();
-        let computerSelection = getComputerChoice();
-        
-        //for testing
-        //let computerSelection = "Rock";
-
-
-        let roundResult = playRound(playerSelection, computerSelection);
-        console.log(roundResult);
-        //console.log(`rounds: ${(i + 1)}`);
-        console.log(`Player score: ${playerScore}, Computer score: ${computerScore}`);
-    }
-
-    let winner = () => {
-        if (playerScore > computerScore) {
-            return "Congrats, you win!"
-        } else {
-            return "You lose, try again!"
-        }
-    }
-
-
-
-    console.log(winner());
-
-    //used to reset player and computer scores after each game
-    playerScore = 0;
-    computerScore = 0;
+function clickOption() {
     
-    //Used to test if player and computer scores are resetting after each game
-    //console.log(`Player score (end game): ${playerScore}, Computer score (end game): ${computerScore}`);
+    buttons.forEach(button => button.addEventListener('click', () => {
+        let playerSelection = button.textContent;
+        computerSelection = 'Rock';
+        //console.log(playerSelection);
+        result = playRound(playerSelection, computerSelection);
+
+    }));
+
+    console.log(result);
 
 }
+
+console.log(clickOption());
+
+// function game() {
+
+//     // while (playerScore < 5 && computerScore < 5) {
+//     // let playerSelection = caseSensitiveInput();
+//     // let computerSelection = getComputerChoice();
+
+//     //for testing
+//     //let computerSelection = "Rock";
+
+
+//     let roundResult = playRound(playerSelection, computerSelection);
+//     console.log(roundResult);
+//     //console.log(`rounds: ${(i + 1)}`);
+//     console.log(`Player score: ${playerScore}, Computer score: ${computerScore}`);
+//     //}
+
+//     // let winner = () => {
+//     //     if (playerScore > computerScore) {
+//     //         return "Congrats, you win!"
+//     //     } else {
+//     //         return "You lose, try again!"
+//     //     }
+//     // }
+
+
+
+//     console.log(winner());
+
+//     //used to reset player and computer scores after each game
+//     playerScore = 0;
+//     computerScore = 0;
+
+//     //Used to test if player and computer scores are resetting after each game
+//     //console.log(`Player score (end game): ${playerScore}, Computer score (end game): ${computerScore}`);
+
+// }
 
 
 //Function that plays one round of rock paper scissors:
@@ -116,12 +137,19 @@ function playRound(playerSelection, computerSelection) {
 
     } else
         if (playerSelection == computerSelection) {
-            alert("It's a tie!")
-            computerSelection = getComputerChoice();
-            playerSelection = caseSensitiveInput();      
-            return playRound(playerSelection, computerSelection);  //This causes the user input to be assigned to the computerSelection
-
+            alert("It's a tie!");
+            // computerSelection = getComputerChoice();
+            // playerSelection = caseSensitiveInput();
+            // return playRound(playerSelection, computerSelection);  //This causes the user input to be assigned to the computerSelection
+            buttons.removeEventListener("click", playRound);
+            clickOption();
         }
+
+    console.log(this.classList.value);
 }
+
+//console.log(playRound);
+
+
 
 
