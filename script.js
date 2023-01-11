@@ -19,14 +19,14 @@ function getComputerChoice() {
 
 
 //Create function to convert input of any case type to first letter uppercase and the rest lowercase:
-function caseSensitiveInput() {
-    //Create variable that takes user input
-    let userInput = prompt(`Enter rock, paper, or scissors: `);
-    let finalResult = userInput.charAt(0).toUpperCase() +
-        userInput.slice(1).toLowerCase();
-    //console.log(finalResult);
-    return finalResult;
-}
+// function caseSensitiveInput() {
+//     //Create variable that takes user input
+//     let userInput = prompt(`Enter rock, paper, or scissors: `);
+//     let finalResult = userInput.charAt(0).toUpperCase() +
+//         userInput.slice(1).toLowerCase();
+//     //console.log(finalResult);
+//     return finalResult;
+// }
 
 
 // //create variable to store play selection
@@ -47,29 +47,48 @@ let playerScore = 0;
 //computer score variable
 let computerScore = 0;
 
-let computerSelection = getComputerChoice();
+//let computerSelection = getComputerChoice();
 //let playerSelection = caseSensitiveInput()
-//let playerSelection = 'Rock';
 let result;
 
+//console.log(rpsEventListener());
+rpsEventListener();
 
-const buttons = document.querySelectorAll('button');
 
-function clickOption() {
-    
-    buttons.forEach(button => button.addEventListener('click', () => {
-        let playerSelection = button.textContent;
-        computerSelection = 'Rock';
-        //console.log(playerSelection);
-        result = playRound(playerSelection, computerSelection);
-
-    }));
-
-    console.log(result);
-
+function rpsEventListener() {
+    const buttons = document.querySelectorAll('button');
+    buttons.forEach(button => button.addEventListener('click', clickOption));
 }
 
-console.log(clickOption());
+let playerSelection;
+let computerSelection;
+
+function clickOption() {
+    playerSelection = this.textContent;
+    computerSelection = 'Rock';
+    // if (playerSelection == computerSelection) {
+    //     divResult.textContent = 'its a tie';
+    //     rpsEventListener();
+    // }
+    result = playRound(playerSelection, computerSelection);
+    return divResult.textContent = result;
+}
+
+
+//computerSelection = getComputerChoice();
+//console.log(playerSelection);
+//result = playRound(playerSelection, computerSelection);
+//divResult.textContent = result;
+//console.log(result);
+
+
+
+
+
+
+
+
+//console.log(clickOption());
 
 // function game() {
 
@@ -108,6 +127,7 @@ console.log(clickOption());
 
 // }
 
+let divResult = document.querySelector('.results');
 
 //Function that plays one round of rock paper scissors:
 function playRound(playerSelection, computerSelection) {
@@ -115,8 +135,14 @@ function playRound(playerSelection, computerSelection) {
 
 
     //compare the results of computer selection and player selection using an if else statement
-
-    if (playerSelection == "Scissors" && computerSelection == "Rock") {
+    if (playerSelection == computerSelection) {
+        console.log("It's a tie!");
+        divResult.textContent = 'Its a tie!';
+        // computerSelection = getComputerChoice();
+        // playerSelection = caseSensitiveInput();
+        // return playRound(playerSelection, computerSelection);  //This causes the user input to be assigned to the computerSelection
+        rpsEventListener();
+    } else if (playerSelection == "Scissors" && computerSelection == "Rock") {
         computerScore++;
         return "You lose! Rock beats Scissors";
     } else if (playerSelection == "Scissors" && computerSelection == "Paper") {
@@ -135,17 +161,11 @@ function playRound(playerSelection, computerSelection) {
         computerScore++;
         return "You lose! Paper beats Rock";
 
-    } else
-        if (playerSelection == computerSelection) {
-            alert("It's a tie!");
-            // computerSelection = getComputerChoice();
-            // playerSelection = caseSensitiveInput();
-            // return playRound(playerSelection, computerSelection);  //This causes the user input to be assigned to the computerSelection
-            buttons.removeEventListener("click", playRound);
-            clickOption();
-        }
+    } else {
+        return;
+    }
 
-    console.log(this.classList.value);
+    //console.log(this.classList.value);
 }
 
 //console.log(playRound);
