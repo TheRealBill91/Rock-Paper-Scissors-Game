@@ -6,6 +6,10 @@ html body {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
+body {
+    margin: 0;
+}
+
 *,
 *::before,
 *::after {
@@ -14,34 +18,45 @@ html body {
 
 .buttonsDiv {
     display: flex;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     justify-content: center;
-    gap: 12px;
+    gap: 16px;
     padding: 6px 0px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 
 }
 
 .results {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: flex;
     justify-content: center;
     margin-bottom: 10px;
+    font-size: 24px;
 }
  
 h1 {
     display: flex;
     justify-content: center;
-    margin: 0rem 26rem;
+    /* margin: 0rem 26rem; */
+    margin-bottom: 2rem;
     /* border: 1px solid red; */
     background-color: black;
     color: white;
     padding: 10px 2px;
+    margin-top: 0px;
+    font-size: 36px;
+    /* margin-bottom: 12px; */
 }
+
+
 
 .runningScore {
     display: flex;
     justify-content: center;
     margin-top: 10px;
+    font-size: 24px;
+
 }
 
 .parent {
@@ -57,26 +72,51 @@ h1 {
 }
 
 .youWinP, .youLoseP {
-    font-size: 24px;
+    font-size: 32px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     margin: 24px 2px;
     align-self: center;
 }
 
 .playAgainB {
-    width: 16em;
+    width: auto;
+    height: auto;
+    font-size: 20px;
     align-self: center;
-    padding: 8px;
+    padding: 12px;
     background-color: rgb(0, 0, 0);
     color: white;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     border-radius: 12px;
     transition: cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: none;
 
 }
 
 .playAgainB:hover {
     transform: scale(1.02);
     background-color: rgb(43, 43, 43);
-    border-color:rgb(129, 129, 129) ;
+    border: none;
+
+}
+
+.buttonsDiv button {
+    width: auto;
+    height: auto;
+    background-color: rgb(32, 32, 32);
+    font-size: 32px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+    border-radius: 0px;
+    border-color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    transition: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.buttonsDiv button:hover{
+    transform: scale(1.02);
+    background-color: rgb(65, 65, 65);
+    border: none;
 }

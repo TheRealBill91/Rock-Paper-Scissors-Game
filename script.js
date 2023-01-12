@@ -111,12 +111,12 @@ function playAgainReform() {
     youWinP = document.querySelector('.youWinP');
     //scoreDiv = document.querySelector('.runningScore');
     //scoreDivP = document.querySelector('.runningScoreP');
-    //const youLoseP = document.querySelector('.youLoseP');
+    youLoseP = document.querySelector('.youLoseP');
 
 
-    if (youWinP.textContent == 'You Won!') {
+    if (youWinP && youWinP.textContent == 'You Won!') {
         parent.removeChild(youWinDiv);
-    } else {
+    } else if (youLoseP && youLoseP.textContent == 'You Lost. Better luck next time!') {
         parent.removeChild(youLoseDiv);
     }
 
@@ -130,7 +130,7 @@ function playAgainReform() {
     parent.appendChild(scoreDiv);
     playerScore = 0;
     computerScore = 0;
-    scoreDiv.textContent = `Computer score: ${computerScore}, Player score: ${playerScore}`
+    scoreDiv.textContent = '';
     //parent.appendChild(buttons);
 
     //scoreDivP.textContent = '';
@@ -145,7 +145,7 @@ function playAgainReform() {
 function game() {
     //const buttons = document.querySelectorAll('button');
     if (playerScore >= 5 && (playerScore >= computerScore)) {
-        
+
         let parent = document.querySelector('.parent');
 
         //console.log('You win');
@@ -167,8 +167,7 @@ function game() {
         parent.appendChild(youWinDiv);
 
     } else if (computerScore >= 5 && (computerScore >= playerScore)) {
-     
-        console.log('You lose');
+        //console.log('You lose');
         parent.removeChild(scoreDiv);
         parent.removeChild(buttonsDiv);
         parent.removeChild(divResult);
@@ -223,7 +222,7 @@ function game() {
 function playRound(playerSelection, computerSelection) {
 
     playerSelection = this.textContent;
-    computerSelection = 'Rock';
+    computerSelection = getComputerChoice();
 
     //compare the results of computer selection and player selection using an if else statement
     if (playerSelection == computerSelection) {
