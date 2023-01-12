@@ -114,7 +114,7 @@ function playAgainReform() {
     //const youLoseP = document.querySelector('.youLoseP');
 
 
-    if (youWinP.textContent == 'You Won!' && youLoseP == 'Y') {
+    if (youWinP.textContent == 'You Won!') {
         parent.removeChild(youWinDiv);
     } else {
         parent.removeChild(youLoseDiv);
