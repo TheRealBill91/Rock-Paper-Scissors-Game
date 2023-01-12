@@ -1,0 +1,58 @@
+html {
+    box-sizing: border-box;
+}
+
+html body {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+.buttonsDiv {
+    display: flex;
+    border: 1px solid red;
+    justify-content: center;
+    gap: 12px;
+    padding: 6px 0px;
+
+}
+
+.results {
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+ 
+h1 {
+    display: flex;
+    justify-content: center;
+    border: 1px solid red;
+}
+
+.runningScore {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px
+}
+
+.parent {
+    /* display: flex;
+    justify-content: center; */
+}
+
+.youWinDiv, .youLoseDiv {
+    display: flex;
+    justify-content: center;
+   
+}
+
+.youWinP, .youLoseP {
+    font-size: 24px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin: 8px 2px;
+}
