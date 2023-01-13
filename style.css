@@ -22,9 +22,10 @@ body {
     justify-content: center;
     gap: 16px;
     padding: 6px 0px;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    /* margin-top: 2rem;
+    margin-bottom: 2rem; */
     flex-wrap: wrap;
+    margin: 3rem 2rem;
 
 
 }
@@ -105,19 +106,19 @@ h1 {
 }
 
 .buttonsDiv button {
-    width: auto;
-    height: auto;
-    background-color: rgb(32, 32, 32);
-    font-size: 32px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color: white;
-    border-radius: 0px;
-    border-color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 8px;
-    transition: cubic-bezier(0.165, 0.84, 0.44, 1);
-    flex: 1;
+        width: fit-content;
+        height: 5rem;
+        background-color: rgb(32, 32, 32);
+        font-size: 32px;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        color: white;
+        border-radius: 0px;
+        border-color: white;
+        border: none;
+        padding: 14px;
+        border-radius: 8px;
+        transition: cubic-bezier(0.165, 0.84, 0.44, 1);
+        /* flex: 1; */
 }
 
 .buttonsDiv button:hover {
