@@ -127,7 +127,7 @@ h1 {
     border: none;
 }
 
-@media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+@media only screen and (max-device-width: 812px) {
     h1 {
         display: flex;
         justify-content: center;
