@@ -219,9 +219,8 @@ function game() {
 
 
 //Function that plays one round of rock paper scissors:
-function playRound(playerSelection, computerSelection) {
-
-    playerSelection = this.textContent;
+function playRound(playerSelection, computerSelection,) {
+    playerSelection = this.innerText;
     computerSelection = getComputerChoice();
 
     //compare the results of computer selection and player selection using an if else statement
