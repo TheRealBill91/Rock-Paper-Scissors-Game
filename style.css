@@ -3,12 +3,9 @@ html {
 }
 
 html body {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: 'Bree Serif', serif, Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
 }
 
-body {
-    margin: 0;
-}
 
 *,
 *::before,
@@ -88,7 +85,6 @@ h1 {
 .youWinP,
 .youLoseP {
     font-size: 32px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     margin: 24px 2px;
     align-self: center;
 }
@@ -101,7 +97,6 @@ h1 {
     padding: 12px;
     background-color: rgb(0, 0, 0);
     color: white;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     border-radius: 12px;
     transition: cubic-bezier(0.165, 0.84, 0.44, 1);
     border: none;
@@ -120,7 +115,6 @@ h1 {
     height: auto;
     background-color: rgb(32, 32, 32);
     font-size: 32px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: white;
     border-radius: 0px;
     border-color: white;
@@ -155,7 +149,6 @@ img {
     height: auto;
     background-color: rgb(32, 32, 32);
     font-size: 32px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: white;
     border-radius: 0px;
     border-color: white;
@@ -247,7 +240,6 @@ footer {
         height: auto;
         background-color: rgb(32, 32, 32);
         font-size: 64px;
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         color: white;
         border-radius: 0px;
         border-color: white;
@@ -276,7 +268,6 @@ footer {
 
     .youWinP, .youLoseP {
         font-size: 60px;
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         margin: 4rem 2px;
         align-self: center;
     }
@@ -289,7 +280,6 @@ footer {
         padding: 20px;
         background-color: rgb(0, 0, 0);
         color: white;
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         border-radius: 12px;
         transition: cubic-bezier(0.165, 0.84, 0.44, 1);
         border: none;
